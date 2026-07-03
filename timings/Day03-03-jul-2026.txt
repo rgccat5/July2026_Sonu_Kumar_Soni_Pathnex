@@ -1,0 +1,15 @@
+Today we have learned important linux commands
+ls
+ls -l
+ls -h
+ls -o
+cp 
+mv
+head by default it will show 10 from top but if we want to so only 2 lins for top we need to run head -2
+tail same in tail -2
+rm
+cat
+and also we learn about vim editer if we need to add anything first we have to press I means insert mode after insert we have to press escape key the type :wq w for write and q for exit form vim editr
+also we have leran about shortcut keys in vm like if we want to replace any charachere we need to press r then the value which we want to change.
+
+we practice pernoaly on aws ec2 amzon linux.
