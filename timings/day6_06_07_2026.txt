@@ -1,0 +1,6 @@
+today we have lerand about automate the task in linux 
+for the automattaion we have to excellent knowledge about shell scripting
+in the morning we have attended the class after finishing the class i practiced all the scripting commands
+we used echo command whih used to print content adn also we used value assignement to variable as well
+we also learn and practiced about value assingment to file like if we want want stor input valu or output value or error value then we have to use code like stdin 0, stdout 1, stderrr 2 and also if we use > it will over write in file and if we use >> it will add on the file.
+we also learn about condition based sotre and show the value like if else condition, for loop conditions, while loop conditions.
