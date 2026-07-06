@@ -1,0 +1,5 @@
+Today we have learned about important process and monitoring related commands
+practice all commands on Ec2 amazon Linux, also we have watched recorded todays video on you tube which was very helpful to hands-on practice
+i enjoyed allot by running all commands and experiment in different use case. we learn about EBS where we can manage partitions we can increase partition space as well
+
+command name is : ps, top, kill, pkill, pgrep, df, du, free, whoami, lscpu and grow.
