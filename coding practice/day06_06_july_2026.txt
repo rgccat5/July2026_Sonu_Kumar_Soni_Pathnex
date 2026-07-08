@@ -1,0 +1,68 @@
+#Ansible - Install Docker
+ - name: Install Docker
+   hosts: all
+   become: yes
+   task: 
+      - name: Install Docker
+        yum:
+          name: docker
+          state: present
+       -name: Start Docker
+        service:
+           name: docker
+           state: started
+           enabled: yes
+
+# Terraform - Provisionining EC2 with VPC
+ resource "aws_vps" "main" {
+    cidr_block = "10.0.0.0/16 "
+}
+resource "aws_instance" "pathnex_ec2" {
+   ami     =ami-0abcd1234abcd1234"
+   instance_type = "t3.medium"
+   subnet_id     = aws_subnet.main.id
+tags = {
+      Name = "Pathnex-EC2"
+}
+}
+# Kubernates - pd with Volume Mount
+  apiVersion:V1
+  kind: pod
+  metadata:
+    name: pathnex-pod
+  spec:
+     containers:
+        -name: web
+         image: nginx
+         columeMounts:
+           -mountPath: /usr/shre/nginx/html
+            name: html-Volume
+     volumes:
+       -name: html-volume
+        hostPath:
+          path: /data
+          type: Directory
+#Shell Scrip -Check for Running Services
+#! /bin/bash
+services=("nginx" "docker" "httpd")
+for service in "${services[@]}"
+do
+   if systemcctl is-actice  --quit $service; then
+       echo "$service is running"
+    else
+       echo " $service is not runnning"
+    fi
+done
+
+#Docker
+#node.js Application (javaScript)
+console.log("Hello Pathnex");
+
+#Docker File
+  FROM node:18
+  WORKDIR /opt/pathnex/node-app
+  Copy app.js /opt/pathnex/node-app/
+  CMD ["node", "/opt/pathnex/node-app/app.js"]
+
+# Real Path
+/opt/pathnex/node-app

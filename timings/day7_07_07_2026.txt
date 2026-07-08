@@ -1,0 +1,28 @@
+"Hi everone! Today, I want to share a quick overview of my recent hands-on practice with Git.
+
+Git is a vital tool for software development and DevOps. When many engineers work together on the same project, it is very common to get mixed up with diffrence code version or duplicate work. Git completly solve this versioning problem"
+
+"For this pracice, I set up an Amazon Linux EC2 instance on AWS. Doing this on a cloud iinstance simulates a real prduction-grade environmet"
+
+"Here is the exact step-by-step workflow I practiced:
+
+First, I configured my global system identity so Git knows who is making the changes.
+
+I used :
+
+  * git config --global user.name "sonu kumar soni"
+  * git config --global user.email "rgccat@gmail.com"
+
+Next, I practiced creating a new local repository using git init, and I also practiced coping an existing repostory using git clone.
+
+"Omnce my repostiry was ready, I used the following core commands to manage my files:
+
+ * I chekced the state of my projects files using git status.
+ * I staged my changes using git add ..
+ * And i Saved snapshot of my work using git commit -m followed by a clear working messsege"
+
+"To work on new features without changing the main code, I used the branching feature. I practiced swithceng over to my feature branch using git switch jyly20026.
+
+Finaly, to connect my local code to GitHub, I added the remote URL using git remote add origin. I then safely synchroinized my code with my remote cloud server using git push and git pull origin."
+
+"Practing these core commands on an EC2 instance gives me a great foundation for handling cloud and DevOps workglows in a real team.
