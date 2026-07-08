@@ -1,0 +1,16 @@
+Today we have lern about servers
+on premises and on cloud servers
+on permises server is used inside local lan and it can not access publicly through internet if somtimes need then it should only access using secure tunnel means using VPN serice an another hand cloud servers can provide diffrent type of infrastrure like IASS, PASS, SASS 
+in IAAS cloud service proderes provides only infrasture on cloud we also can call barematel servers
+in PASS cloud service providers provides plateforms menas hardaware with operating system.
+in SASS cloud servece provders procides diffrent type of software for clients side users, suppose we want to use email service on our domain for example my domain is https://sksoni.com and i want to create emails inside the domain so we need to take SASS form goolge, microsoft, zoho and other providers. This will called Software as a Service.
+
+today in the mornign we learnd about AWS Cloud Server Providers
+
+we leare about EC2(Elastic Computer Cloude). where we can create instance accourding to our need. we can create coustmise configrations (CPU, RAM, storage, networking). Diffrent price model like On-Demand, Reserve and Spot Instance. Auto scalling according according to on demand trafik. It suppors linix ,windows, IAM and Golden IAM. its intigrates with S3. VPC, IAM for better security.
+
+we lerned about VPC(Virtul privaet cloud) which is used for coustomized ip address range, subnets and route tables, supports secure connectivity for cloud setup. Suppose we have the database for our application and we need to access form application then our application will communication thorhb VPC to database. Additionly if we have created antoht instance and we want to communication with each other instance we will use VPC.
+
+we also learnd about IAM ( Identy and access management) purpose of this is to provide secure resource access, by using this we can create a assign the access policy to users, create user, gorups, roles to control access. By using IAM we can moniter the user activity.
+
+We also learn about S3 ( Simple Storage Service) in this service we can store our data on cloud accordign to requiement in aws diffrent type of s3 service available like standred, glasiar user can use according to therir need with security and it inntigrates with any application or any other cloud service provders.
