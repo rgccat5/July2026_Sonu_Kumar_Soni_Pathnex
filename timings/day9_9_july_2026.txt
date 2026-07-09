@@ -1,0 +1,21 @@
+T0day we have learn about othr service of AWS
+we have finished yesterday 4 services
+1 : EC2
+2 : IAM 
+3 : VPC
+4 : S3
+5: We have learn about session manager where we can login without SSH/RDP and no need any public IP.
+6 : we have kearb about Rout53, in this service we can confiure domain to ip dns server and VPC routing sppose we need to communicate muliple vpc we have to create to create 1 hub and other will be spke hub, if have morethan 10 vpc then we hace to usee transit getway.
+7 : Cloud Trail : it can record any activity of AWS, track changes everting happning on aws.
+8 : Cloud Watch : in cloud watch service we can log, we can create mattrix, event wise we can moniter activity, check what is happening on th aws diffrent services, help to visiualise health of resources.
+9 : EKS : Elastic Kubernet Service, it is used for contanirsiatin managent
+10 : Auto Scaling : It is used for auto scale according to trafic but using this feature there should be fixed mininum and maximum use.
+11 : Lamda : this service is very imortant if we want to run any code for somtime menas event wise it supports maxium programming laguange, it is also called serverless service where withut fully confiugred server we can execute our program12 : AWS Sheild : it woks as a selad to aws sevicesa and servers like it protesct form Ddos Attac.
+13 : AWS WAF : Web Application Firells, protect web application from common threats.
+14 : Amazon Gaurd Duty : Threat ditection serveice fo amazon, it ditects any trheat and identify unothised access.
+15 : Amazon Inspector : Automatic vulnarablity management services 
+
+these we have lerarn in th morning session
+we have checked and try to confiugre on aws server in the afternoon.
+
+tomorow we will learn other left services of aws.  
