@@ -1,0 +1,99 @@
+# Day08 -- Introduction to Docker and CI/CD Pipelines 
+# Ansible -- Install Docker Compose
+   -name: Install Docker Compuse 
+    hosts: All 
+    become: yes 
+    tasks:
+      -name: Install dependencies
+        yum: 
+         name: "python3-php"
+         state: present
+      -name: Install Docker-compose
+         pip:
+          name: docker-compose
+    # Terraform - Ec2 with Security Group and EBS Volume
+     resource "aws_security_group" "allow_ssh_http" {
+      name      ="allow_ssh_http"
+      description = "Allow SSH and HTTP access"
+      ingress {
+       form port = 22
+         to port = 22
+       protocol = "tcp"
+       cidr_blocks = ["0.0.0.0/0"]
+      }
+
+      ingress {
+        form_port = 80
+          to_port = 80
+         protocol = "tcp"
+        cidr_blocks = ["0.0.0.0/0"]
+}
+}
+
+  resource "aws_instance" "pathnex_ec2" {
+    ami               = "ami-0abcd1234abcd1234"
+    instane_type = "t3.medium"
+    security_group = [aws_security_group.allow_ssh_http.name]
+
+   ebs_block_device {
+      device_name = "/dev/sdh"
+      volume_size = 30
+   }
+}
+# Kubernetes - Service with NodePort
+    apiversion:V1
+    Kind: Service
+    metadata:
+      name: pathnex-service
+   spec:
+     type:NodePort
+    selector:
+      app: pathnex-app
+     Port:
+   -protocol:TCP
+       port: 80
+    nodeport: 30007
+
+#Jenkinsfile - Docker Build and push
+
+ pipeline {
+     agent anyh
+     stages {
+        stage('Build Docker Image') {
+           steps {
+             script {
+              docker.build ('pathnex-app')
+                     }
+                 }
+           }
+        stage('push Docker Image') {
+           step {
+             script{
+               docker.withRegistry('https://docker.io', 'docker-credentials') {
+               docekr.image('pathnex-app').push('latest')
+                  }
+                 }
+             }
+         }
+       }
+     }
+# Gitlab CI/CD - Build & Push Docker Image
+    stages:
+      -build
+      -push
+
+    build
+     stages: build
+     script:
+       -docker build -t pathnex-app
+    push:
+      stage: push
+      script:
+          -docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWROD"
+          -docker push pathnex-app
+
+# Docker
+# Alpine Linux
+     FROM alpine:latest
+     WORKDIR /opt/pathnex/alpine-app
+     CMD [ "echo", "Hello Pathnex"]
