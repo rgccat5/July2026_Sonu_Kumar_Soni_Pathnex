@@ -1,0 +1,41 @@
+In the last two session we have learned about AWS Services 1- EC2, 2-IAM, 3-VPC, 4-S3, 5- Session Manager, 6-Route53, 7-Cloud Trail, 8-Cloud Watch, 9-IKS, 10-Auto Scaling, 11- Lambda, 12- AWS Shield, 13- AWS WAF, 14-Amazon Guard Duty, 15- Amazon Inspector.
+
+Today we have learned other left AWS Services 16- AWS Key Management System (KMS) 17- AWS System Manager (SSM) 18- AWS RDS (Relational Data Base Management System), 19- AWS Aurora DB, 20- AWS Dynamo DB, 21- AWS Redshift 22 - AWS DMS( Data Migration Service) 23-AWS Batch, 24 Glue, 25- EAF, 26 AWS- Elastic File System 27- AWS Cloud Front AWS, 28 snowball, 29- AWS Pipeline, 30-AWS Build, 31- AWS Code Deployed, 32-AWS Xray.
+
+16 -AWS Key Management System (KMS): it is used for encryption key security, we can create symmetric (it is use single key) and asymmetric( in this used two keys public and private key) and its support AWS services like S3 and others.
+
+17 -AWS System Manager : It is used for fully system management by using  system agent it manages hosts and nodes automatically.
+
+18 - AWS RDS (Relational Database management System ) : in this service we can manage SQL related database like MySQL, Oracle, Postgres, maria db. and other database, we can create replica of main database for reading the data and all db related management.
+
+19 -Amazon Aurora : This is serverless distributed database with 5 x fast for my sql and 2x fast for PostgreSQL. fully managed with self healing and patching.
+
+20 -Amazon Dynamo DB : This is used for no SQL database its very fast it manages database like mango db. it can integrate with cloud watch, lambda and other AWS services
+
+21 - Amazon Redshift : It manage larges data where house service for running complex quarries.
+
+22 -AWS DMS (Database Migration Services): This service is used for database migration form one db. structure to another db. structure with minimal downtime.
+
+23 -AWS Batch : this service is used for bulk processing and independent program execution capability like lambda but lamda has 15 limit execution time while AWS batch no time limit.
+
+24 -AWS Glue : It is serverless architecture it collets the data by crawling on datasheets, managed ETL(Extract, Transform, Load) service for data preparation and loading.
+
+25 -AWS Elastic File System (EFS) : Scalable file system for EC2 instance and on premises resources. It is vital used for content management and big data anylysis.
+
+26 - AWS Elastic Beanstalk : It is completely provides the feature development to deployment it PaaS based service where user can deplop program its supports major language like Java, Python, Node.js files. Automatic handles deployment and scaling and monitoring.
+
+27 -AWS Cloud front : It is used for distributed application using CDN (Content Delivery Network ) to distribure the load and for faster respose to user it can configured 
+according to load, according to area wise zone wise for the best performance.
+
+28 - AWS Snowball : It is mobile database movement service for on-premise data move to AWS.
+
+29 - AWS Code pipeline : it is provide feature to deployment of application on server form development to deployment process.
+
+30 -AWS Code Built : it is used for code compile human readable to machine readable.
+
+31 - AWS Code Deploy : it is used for developed and compiled code deploy on servers.
+
+32 - AWS Xray : Tracking services for debugging and anylysis micro services, provides insides of services, finds bottlenecks , and performances.
+
+Tommorow we will start Docker 
+
