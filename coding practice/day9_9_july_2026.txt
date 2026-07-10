@@ -1,0 +1,96 @@
+#Day 09 - Docker Integration wiht Jenkins & Gitlab
+    * Ansible -Setup Docker Container for Nginx
+    -name: Setup Docker Container fro Nginx
+     host: all
+     become: yes
+     tasks:
+        -name: Pull Nginx image
+         docker_image
+            name:nginx
+          source:pull
+        -name: Run Nginx container
+          docker_container:
+            name: nginx-container
+            image: nginx
+            state: started
+          published_ports:
+                 - "8080:"80"
+      
+      *Terraform - EC2 with Auto scalling Group
+      resource "aws_launch_configruation" "example" {
+         name = "example-config"
+         image_id = "ami-0abcd1234abcd1234"
+         instance_type = "t3.medium"
+}
+
+	resource "aws_autoscalling_group" "example" {
+            desired_capacity =2
+            max_size        = 3
+            min_size        = 1
+            vpc_zone_identifier = [subnet-12345678']
+            launch_configuration = aws_launch_configuration.example.id
+           }
+  * Kubernets - Horizontal pod Autoscaler (HPA)
+     apiVersion: apps/v1
+     kind: Deploymnet
+     metadata:
+       name: pathnex-deployment
+      spec:
+         replics: 1
+       selector:
+       matchLabls:
+         app: pathnex-app
+      spec:
+        containers:
+           -name: niginx
+            image: nginx
+            ports:
+           -containerPort:80
+ ---
+
+        apiVersion: autoscaling/v2
+        Kind: HorizontalPodAutoscaler
+         metadata:
+           name: pathnex-hpa
+         spec:
+            scaleTargetRef:
+              apiVersion: apps/v1
+              kind: Deployment
+              name: pathnex-deplyment
+        minReplacas:1
+        maxReplicas:10
+        targetCPUUtilisationPercentage: 50
+
+    * Jenkinsfile - Deploy to Kubernetes
+        pipeline {
+         agent any
+          stage {
+            stage( 'Deploye to Kubernets')
+            steps {
+              scrit {
+                 sh 'Kubectl apply -f deplyment.yaml'
+                 }
+                }
+             }
+            }
+ 
+ *GitLab CI/CD -Deploy to Kubernetes
+  stages: 
+   - deploy
+
+
+  deploy:
+     stage: deploy
+     script:
+      -kubectl apply -f kubernetes/deployment.yaml
+
+
+  * Docker
+  # Environment Variables
+    FROM ubuntu:22.04
+    ENV Institure=Pathnex
+    ENV Course=DevOps
+    CMD echo "$INSTITUTE - $COURSE"
+
+      
+
