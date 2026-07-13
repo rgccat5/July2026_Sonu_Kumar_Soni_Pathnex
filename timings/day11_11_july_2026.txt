@@ -1,0 +1,38 @@
+Today we have learn about docker
+
+docker is a open source platform which helps developer to automate the deployment application it contents all application dependencies on a container so that during development environment can transfer on production server.
+
+what is container : container is the packaged all required tolls and dependency, it provides the feature to run application same way run on production as it was running on development environment.
+
+for the developed code to deployment process we have to create docker file 
+
+inside the file script will be
+
+FROM: base image
+WORKDIR /user/home/ folder name
+COPY . .
+
+RUN npm install
+EXPOSE 3000
+CMD ["npm","start"]
+
+such type we have to create docker file, here is most important think difference between run and CMD run can be execute many times during the built process while CMD can use in one time In the last same entryponit can use only one time during starting.
+
+
+first we have to build the application by using command docker build -t image_name -f docker file name
+
+after the build we well get the application image, for the image show we have to run docker images command to show the builded image
+then if want to run the application then we have to use the command docker run -d -p 80:3000 image name after that container created and start to run.
+
+if we want to delete the running container then we have to first stop the container using using docker stop container id or container name
+after stopt the container we will see the stopped container using docker ps -a command
+and then we can delete the container using docker rm container name or id
+
+if we need to delete image then we have to use use command docker rmi image_name
+
+we also learn about transfer files local development pc to server using scp command 
+scp -i production_server_key.pem source_file_name destination_server_address_and_folder
+
+we have learnd about registry where we can find alrdady build images for common purpse and on the cloud lot of proicders available like docker-hub and so more.
+
+
