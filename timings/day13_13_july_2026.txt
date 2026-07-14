@@ -1,0 +1,37 @@
+Today we have discussed in the morning session about preparation of interview and communications
+
+we discussed about important questions asked by interviewer during interviews as well
+like http/https/ftp
+
+Networking concepts
+
+CDIR
+
+about git
+
+about docker
+
+about concept of Kubernetes
+
+Route 53 (DNS Records): A,  CNAME, MX, TXT, Alias mapping.
+
+.gitignore
+
+CI/CD Pipelines:
+
+Dev/Prod Environments
+
+AMI vs. Golden Image:
+
+AWS IAM (RBAC): C
+
+AWS S3 Lifecycles:
+
+AWS Lambda Timeouts
+
+we discussed comparison between features and services like 
+merge vs. rebase in git, CVE vs CVSS, RUN vs. CMD, peering and transit gateway
+
+after morning session i was busy for whole day so in the evening session
+i have revised of the whole last days completed sessions.
+tomorrow we will learn Kubernetes installation and deployments.
