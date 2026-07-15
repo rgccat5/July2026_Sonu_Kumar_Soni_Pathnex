@@ -1,0 +1,23 @@
+Today we have learn about Kubernetes 
+
+Kubernetes: Kubernetes is also known as K8s. Is and open source system for automate, scaling, deployment and for container orchestration.
+
+Kubernetes has major 2 main components first control plane and second node 
+
+control plane must be on odd numbers like 1, 3 ,5 or 7 and in other hand node has at least minimum 2 nodes so that if one node fails other node can handle the application 
+
+now lets understand control plane : control plane has 4 major components kube-api-server, control manager, etcd, schedule. 
+Kube-api-server : it is used for all communication between compnets no componets talk to each other directly.
+control manager : it used for mange the pods and resources related task
+scheduler : it is deployed the pod on best fit node.
+etcd : it is like db it stores all the task happening inside the kubrenets
+
+lets understand nodes: nodes has major 3 component kublet, kube proxy, CRI and inside CRI has pods and inside pod runs the container.
+kublet :it is used for communication between node and control plane it taks to kube-api-server for every update messege.
+kube-proxy: it is used for networking related task.
+
+every pod has seprate ip address ot make pod isolate.
+
+in the all components communication establish through kube-api-server, when user request about start pod then control manager creates the pod after that schedulers cheks on node which node would be good for this required pod and its deployed node inside CRI, and this information stored on etcd during this process if any component required to container form out side then kube-api-server tells the cloud controller manger and this request fulfilled by controller manager.
+
+
