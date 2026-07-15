@@ -1,0 +1,25 @@
+Today in the morning session we have learnd about AWS EKS Configuration, Security Policy, update stargy and auto scalabltiy.
+
+We did Hands-on Prcatice as well and learn some important tools.
+
+created IAM user and added AmzonEKSClusterPolicy.
+we learn abuot cost trap : staing on a really old Version triggers a massive price its jumpes 10 sends to 60 sends per hour so we must update reguralry to save money.
+
+we learnd about HPA horizontal Pod Autoscaler : implementd Matrics Server to montite real-time resource utilisation metrics. it helps to create the pod according to requirment whithout Matrix Server HPA can not work.
+
+Jump Server : we created jump server on EC2 instance, its act as secure administartory proxy.
+
+we learn about deplymnet startgy:
+
+Blue-Green :in this stargy we create fully new environment cluster(green) and drop old enviornmet cluster(blue) and transfer 100% trafic using DNS.
+
+Rolling Update : in this stargy we creates new pods one by one and drop old pods one by one.
+
+Canary Deplyment : this is very use full, in this we transfer some trafic to new pods for testing purpose after new application working successfuly we move all trafic on all created new pods.
+
+Recreate : in this stracg we drop all old pods and creats new pods before the new container instance are scheduled and inititalized.
+
+Today we have prctice the whole day about AWS EKS cluster creation and and create connection through jump server. we run some important command as well.
+
+tommorow we will learn advalnce node creation and we will learn about how to learn pods on multiple instance.
+
