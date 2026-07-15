@@ -1,0 +1,44 @@
+Today in the morning session we have deployed EKS cluster and did live hands-on and also learn Main App Controllers
+
+Replica Sets : Constantly monitors your pods and forces the exact number of copies you want to stay online. If one crashes, it instantly starts an identical replacement.
+
+Deployments :Manages the update process. It slowly replaces old pods with new versions one-by-one so your website never goes down during an update.
+
+Stateful Sets :Manages pods that must remember data (like databases). It starts them in a strict order and locks each one to a permanent name and dedicated storage drive.
+
+Daemon Sets :Automatically deploys exactly one copy of a pod to every single server in your network. It is used for background tasks like security monitoring.
+
+Priority Classes : High Priority to pod
+
+Preemptions Policy : he can remove pod even high priority enabled pod if he needs to deploy himself.
+
+if preemtionPolicy : PreemptLowerPrioty and if preemtionPolicy: Never set then it will do nothing
+
+
+Cluster add-one(DNS, CNI, autosclae)  ---- Very High
+
+Production APIs                       ---- High
+
+Stateful Services                     ---- High
+ 
+Background workers		      ----Medium
+
+CI/CD jobs                            ---- Low
+ 
+Batch Processing                      ---- Low
+
+
+for access cluster form jump ec2 machine :
+ 
+sudo aws eks update-kubeconfig --name Pathynex
+
+sudo kubectl get nodes  : Before run this we have to allow node security group to allow traffic form EC2 jump server 
+
+
+kubectl get pods -A
+
+To see the pod why pending or see details of pod command:
+
+kubectl describe pod metrics-server-867db4bbb5-jczhq -n kube-system
+
+
