@@ -1,0 +1,50 @@
+Today in the morning session we have learned a lot of great concepts.
+
+Traffic Management & Internal Networking
+ 
+ Headless Service : Bypasses central load balancing to give you a direct list of exact network address for every individual instance. 
+
+* Ingress & Nginx Ingress : Ingress acts as the entry traffic gate mapping public web requests to internal routs, and Nginx Ingress is a popular brand running on the Nginx software engine.
+ 
+* Istio : An advanced service mesh layer that monitors, route and secure communication between application without changing their code.
+
+*Pod to Pod Networking : The baseline rule where every single pod gets its own distinct internal IP, letting them talk directly to each other.
+
+*Service Discovery : A real-time, automated internal phone book that ensures application can always find each other by name, even as their IPs change.
+
+* Network Policies : This internal firewall rules of the cluster that let us lock down exactly which application are allowed to talk to one another.
+
+
+
+---- Workload Management & Placements Rules
+* Deoployments & ReplicaSets: A Deployment manages high-level Pods blueprints and rollouts, while a ReplicaSet acts as the bodyguard ensuring the exact number of duplicate copies stay running.
+
+* DaemonSets: A controller ensuring one copy of a specific background program runs on every single computer or node in the network.
+
+* Affinity ( Node vs. Pod) : Node Affinity matches pods to machines based on physical hardware traits. Pod affinity/Anti-Affinity dictates neighbor relations- either keeping related pods close together or spreading duplicates apart to prevent downtime.
+
+* Taints & Tolerations : A Taint is a "Keep Out" sign placed on a machine to restrict ordinary pods, while a Toleration is the special permission passport an pods needs to run there.
+
+---- Pod Health Probes
+ 
+ * Startup Probe : A check when an pods is first turning on, giving slow-loading system extra time to boot up before other heatlh test start.
+ 
+ * Liveness Probe : A continues check to see if an pods has frozen or crased; if it fails, ther cluster restarts it to self-heal.
+
+ * Readiness Probe: A check to see if the pods is ready to accept user traffic, temporarily stopping traffic if the pod is too busy loading data.
+
+We also did Hands-on and learn some important commands
+
+Command : alias k='kubectl' this will short kubectl command to only k. now we can use "k get pods" for pod list. for the permanent we have to run command vim ~/.zshrc and we have to add alieas detail.
+
+we did practice for how to create statefull pod by creaing .yml file like vim service_july_batch.yaml
+all script we mention on this file. then we run kubectl apply -f service_july_batch.yaml
+
+we also tried to troubleshoot EBS CSI Driver error.
+
+by using this command we kubectl get statefulsets.apps nginx -o yaml > 1.yaml
+
+
+
+
+
