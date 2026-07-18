@@ -1,0 +1,48 @@
+Today was the morning class cancelled so i got the chance to revise all the learning from starting thins month                                                                                                                                  I did revised about linux :ls, cd, pwd, mkdir, rm, cp, mv, touch, cat, head, tail, find, chmod, chown, chgrp, umask
+
+and compress related commands like hot to use tar, gzip, zip and alos we learn optins like -la, -d, -r, 
+
+we revised the more resource management commands : ps, top, kill, pkill, pgrep, and also grep in detail with supporting options like -i, -v, -r or -R, -l, -n, -w, -c, -e, -A, -B, C
+
+and we revised more commands: whoami, df, du, free, uptime, lscpu, lspci, lsusb
+
+and also we revised networking commands :
+
+ifconfig, ping, netat, ss, ssh, scp, wget, curl
+
+User management commnds : who, sudo add user username, finger, sudo delete user group name, last, finger username
+sudo userdel -r username
+
+sudo passwd-l username
+su - username
+sudo usermod -a
+
+
+We practiced Git commnads : git config --global user.name " sonu kumar soni"
+                            git config --global user.emai "rgccat5@gmail.com"
+  gitinit, git add . git commit -m "your messege", git status, git clone repo., git log, 
+
+and also working with branchers commndas : git branch, git remote add orgin repostory url, git push origin branchname
+git pull origin branchname.
+
+
+# we revised about aws service:
+
+ EC2 intance, VPC, IAM, S3, session manager, route, clout trail, EKS, Auto scalling, lambda, AWS WAF, Amaxon GardDuty,
+Amzon Inspector, AWS System Manager, (SSM), Amaxon RDS(Relational Database Service) Amaxon DynamoDB, Amaxon Redshift, AWS DMS(DAtabase Migration Service) AWS Glue, Amaxon EKastic File System(EFS), AWS Elastic Beanstalk, AWS Snowball, AWS Codepipeline, AWS Code Build, AWS X-Ray
+i rewised all the aws services.
+
+#we revised the docker related commands and structure
+
+we revised about container, docker image, dockerfile, docker compose, docekr rgistry, docker netwrking : bridge, host, none, docker pull images, docer images, docker ps -a, docker start contantiner name, docker stop container name or id, docker rm container name, docker rmi imagese name, docker build -t image name, docker run code foler -p 8080:80 and image name, docker exec -it containter 
+
+# we revised kubernets : we revised about core 2 componets of kubernets first control plane and second is worker node
+
+inside control plane has 4 importent components conteroller manger, scheduler, etcd, kube-api-server on otherhand inside worker node has 3 main component, kubetel, kube proxy, CRI, CRI contents pods and inside pods runs container
+
+we revised about nanmespaces : default, kube-system, kube-public, kube-node-lease, cluster ip, node port, load balancer, headless service, deployments, replicasets, daemonsets, jobs and cron jobs, ingress: nginx, istio, affinity: node affnity, pod affinity, antiaffinity, taint, tolerate, prbes : liveness probe, readines probe, startpu probe
+
+so i revised all above mentions and praciced in the day
+
+ tommorw we will leanr in the morning session about helm chart.
+ 
