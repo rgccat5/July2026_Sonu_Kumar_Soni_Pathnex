@@ -1,0 +1,24 @@
+Today in the morning session we have learned about Helm charts, A helm chart is a pre-configured package of Kubernetes resources which can be easily deployed. helm chart, it helps to reduce the repetition of work.
+
+why we use help
+
+simplifies deployment: instead of created yaml for every resource  we can create or use centralised helm yaml for all resource.
+
+version control: it provides the feature where we can version every changes and we can restore as well if any new changes fail.
+
+Configuration management : Helm use values files to manage the configuration of charts.  
+
+Reusable and sharable: its reusable and sharable we can share with public repostry or we can create own.
+
+we learnd about important commands
+
+helm list
+
+helm rollback my-nginx-ingress 2
+
+helm uninstall my-nginx-ingress
+
+
+we practice all commands and hands-on
+
+

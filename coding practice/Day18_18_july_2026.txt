@@ -1,0 +1,127 @@
+# Day 18 - High Availbility, Multi-Region, and Auto-scalling
+
+## * Ansible - Confiure HAProxy for Load Balancing
+
+     ~~~yaml
+      -name: Setup HAProxy Load Balancer
+       host: all       
+       become: yes
+       task: 
+        - name: Install HAProxy
+          yum:
+           name: haproxy
+           state: Confiure HAProxy
+       temptate:
+           src: haproxy.cfg.j2
+          dest: /etc/haproxy/haproxy.cfg
+        - name: Start Haproxy sdrvice
+          service:
+             name: haproxy
+            state: started
+            ebalbed: yes
+   *Terraform - Multi-Region Auto-Scaling Group with ALB
+    resource "aws_lb" "pathnex_lb" {
+      name               = "paahtnes-lb"
+      internal           = false
+      load_balancer_type = "application"
+      secruity_grops     = [aws_security_group.allow_ssh_http.id]
+      subnets            = [aws_subnet.public.id, aws_subnet.public2.id]
+
+     }
+
+  resource "aws_autoscalling_group" "pathnex_asg" {
+    desired_capacity    = 3
+    max_size            = 5
+    min_size            = 2
+    vpc_zone_identifier = [aws_subnet.pubilic.id, aws_subnet.public2.id]
+    launch_configuration = aws_launch_configration.pathnex_config.id
+ }
+
+* Kubernets - Horizontal Pod Autoscaler with Multiple Replicas
+   apiVersion: apps/v1
+   Kind: Deployment
+   metadata:
+     name: pathnex-we-app
+   spec:
+     replicas: 3
+   selector:
+     matchLabels:
+       app: pathnex-web-app
+     templete:
+       metadata:
+         labels:
+          app: pathnex-web-app
+     spec:
+       containers:
+        -name: nginx
+         image: nginx
+         port:
+           -containerPort: 80
+  ---
+   apiVersion: autoscaling/v2
+   kind: HorizontalPodAutoscaler
+   metada:
+      name: pathnex-web-app-hpa
+   spec:
+     scaleTargetRef:
+      apiVersion: apps/v1
+      kind: Deplyment
+      name: pathnex-web-app
+     minReplicas: 2
+     maxReplicas: 10
+      targetCPUUtilizationPercentage: 80
+
+  * Jenkinsfile - Blue-Grenn Deployment Strategy
+    pipeline {
+      agent any
+      stages 
+      stages {
+          echo ' Building Docker image...'
+          docker.build (' pathnex-web-app')
+       }
+   }
+   stage(Test) {
+     steps {
+      echo 'Running tests... '
+       }
+    }
+  stage('Blue-Green Deployment') {
+      steps {
+         script {
+             sh 'kubectl apply -f kubernets/blue-deployment.yaml'
+             sh 'kubectl apply -f kubernetes/green-deployment.yaml'
+             sh 'kubectl rollout status deployment/blye-deployment'
+             sh 'kubectl rollout status deployment/green-deployment'
+                 }
+              }
+           }
+         }
+      }
+ 
+ # * GitLab CI/CD - Blue-Green Deployment with kubernetes
+     stages:
+        - build
+        - push
+        - deploy
+ 
+     build:
+      stage: build
+      script:
+         - docker build -t pathnex-web-app .
+       push: 
+         stage: push
+         script:
+           - kubectl apply -f kubernetes/blue-deployment.yaml
+           - kubectl apply -f kubernetes/green-deployment.yaml
+           - kubectl rollout status deployment/blue-deployment
+           - kubectl rollout status deployment/grenn-deployment
+
+
+   * Docker
+     # redis Container
+     docker run -d --name pathnex-redis redis
+     
+
+# Real Path
+   /data
+ 
