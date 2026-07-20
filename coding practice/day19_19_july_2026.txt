@@ -1,0 +1,113 @@
+Day 19 -Advanced Montieoring, Logging, and Security
+    * Ansible - Setup Prometheus for Monitorting
+     -name: Install Prometheus for Monitoring
+      hosts: all
+      become: yes
+      task: 
+           -name: Install Prometheus dependncies
+            yum:
+             name:
+                  - prometheus
+                  - promethus-node-exporter
+             state: present
+           - name: Start Prometheus service
+             service:
+               name: prometheus
+              atate: started 
+              enabled: yes
+     * Terraform - Setup AWS Cloudwatch for Monitoring
+       resource = "aws_cloudwatch_log_group" " pathnex_log_group" {
+        name = "pathnex-log-group"
+       }
+ 
+       resource " aws_cloudwatch_log_stream: :pathnex_log_stream" {
+       log_group_name = aws_cloudwatch_log_group.pathnex__log_group.name
+        name          = "pathnex-log-steam"
+      }
+     
+   * Kubernetes - Deploy Fluentd for Logging
+     apiVersion: apps/v1
+     kind: Deployment
+     metadata:
+      name: fluentd
+     templeate:
+        labels:
+         app: fluentd
+       spec:
+         containers:
+          -na,e: fluentd
+           image: fluent/fluentd
+           ports:
+              -containerPort: 24224
+    
+ ----
+    apiVersion: v1
+    kind: Service
+    metada:
+       name: fluentd
+     spec:
+        selector:
+       app: fluentd
+     ports:
+      - protocol: TCP
+        port: 24224
+  * Jenkinsfile - Integrating Prometheus Moniteoring in pipeline
+    pipeline {
+    stages {
+      stage('Build') {
+        steps {
+          echo ' Building Docker image..'
+          docker. build ('pathnex-we-app')
+        }
+       }
+     stage('TEst") {
+     steps {
+        echo 'Running tests...'
+         }
+       }
+     stage(;Monitor Deployment;) {
+        steps {
+         script {
+           sh 'kubectl apply -f kuvernetes/deployment.yanl'
+           sh ' kubectl get pods --wath'
+           }
+         }
+      }
+     }
+  * GItLab CI/Cd -Promtheus and loggin Integration
+     stages:
+   - build
+   - pushj
+   - deploy
+  build:
+     stage : build
+     script:
+       - docekr build -t pathnex-web-app .
+   push:
+   stage: push
+   script:
+       - docekr login -u "$CI_REGISYRTY_USER" -p "$CI_REGISTRY_PASSWORD"
+       - docker push pthnex-web-app
+    
+    deploy:
+    stage: deploy
+      script:
+      - kubectl apply -f kubernetes/deployment.yaml
+      - kubectl get pods --watch
+   
+   * Docker
+  # Flask Application (Python)
+     form flask import Flask
+     app = Flask(__name__)
+     def home ():
+        return "Hello Pathnex"
+     app.run(host='0.0.0.0', port=5000)
+
+ # Docker File
+   FROM python:3.11
+   WORKDIR /opt/pathnex/flask-app
+   COPY . /opt/pathnex/flask-app/
+   RUN pip install flask
+   CMD ['python', "/opt/pathnex/flask-app/app.py"]
+
+

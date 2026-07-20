@@ -1,0 +1,11 @@
+Argo CD is implemented as a custom Kubernetes controller. It operates on the principles of GitOps, Argo CD connects to target repositories, understands the written setup instructions—whether they are plain YAML, Helm charts, or Customize templates.
+
+AgroCD Continuous Comparison: Argo CD has a smart monitor that constantly compares the live system with the original plan. It watches them 24/7 to make sure they match perfectly.
+
+Catching Unauthorized Changes: If a manual change happens directly in the cluster via kubectl, Argo flags the application as OutOfSync. It raises a red flag, so that team instantly knows about master instructions gotten out of sync.
+
+Automatic Fixing (Self-Healing): When it finds a difference, it can be configured to automatically overwrite the unwanted changes. It will force the live cloud system to change back and perfectly match the master instructions without needing human intervention
+
+One-Click Rollbacks: If a new update breaks the sysem, there is no need to panic. Argo CD lets you instantly restore the system to its last working state with a simple 'undo' command, taking the pressure off the team.
+
+Visual Dashboard: Instead of forcing engineers to look at black text screens and code lines, it alerts the team and displays status via its built-in Web GUI.
