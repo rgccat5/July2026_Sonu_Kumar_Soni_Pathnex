@@ -1,0 +1,26 @@
+Today we have learned about ansible and did hands-on practical terraform with ansible
+
+Ansible is open source tool that used automate confiuration management, application deployment and task automation. IT allows IT administrators and ddevelopers to reduce the repetation work by automate the task like installing software, configure servers and management system accorss large machines. Its don't need to install any agent any spscial software on client remote machine. 
+
+Basic components of ansible : Playbook, inventory,  module 
+
+and core components : control node, managed nodes, paybooks
+
+common use of ansible :
+
+
+System Confiugration
+
+application developmetng
+
+provisning cloud resources
+
+patch management
+
+infastructre as code
+
+
+
+we did hands-on as well
+
+tommore we will do more hands-on
