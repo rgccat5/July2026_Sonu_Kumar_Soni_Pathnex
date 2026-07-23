@@ -1,0 +1,91 @@
+Day 23 -Servless Archecture and Microservices
+* Ansible - Deploy Lambda Function Using AWS CLI
+- nam: Deploy AWS Lambda Function
+  hosts: localhost
+  task: 
+      -name: Create Lambda Function
+       command: aws lambda create-function --function-name pathnex-lambda --runtime python3.8 --role arn:aws:iam::123456789012:role/lambda-execution-role --handler lambda_function.lambda_handler --zip file lileb://lambda.zip
+
+* Terraform - Serverless API Gateway with lambda Integration
+  resource "aws_api_gateway_rest_api" "pathnex_api"{
+           name        ="pathnex-api"
+           description = "pathnex API"
+      }
+       resource "aws_lambda_function" "pathnex_lambda" {
+              function_name = "pathnex-lambda"
+              runtime       = "python3.8"
+              rule          = "aws_iam_role.lambda_handler"
+              filename      = "lambda.zip"
+       }
+     
+  resource "aws_api_gateway_integration" "lambda_integration" {
+       rest_api_id = aws_api_gatway_rest_api.pathnex_api.id
+       resource_id = aws_api_gatway_resource.pathnex_api.id
+       http_method = aws_api_gateway_methond.pathnex_method.gttp_method
+       integration_http_method = "post"
+       type = "AWS_PROXY"
+       uri = aws_lambda_function.pahtnex_lambda.invoker_arn
+   }
+    
+ * Kubernetes - Deploy microservices Using-chart
+    helm install prathnex-microservice ./microservice-chart
+* Jenkinsfile - Deploy Serverless Application with Lambda
+   pipeline {
+       agent any
+       stages {
+          stage('Build') {
+           steps {
+                echo 'Biuilding lambda function...'
+                sh 'zip -r lambda.zip lambda/'
+             }
+         }
+           stage(Deploye to AWS Lambda') {
+             steps{
+              script{
+             sh 'aws lambda update-function-code --function-name pathnex-lambda --zip-file fileb://lambda.zip'
+           }
+        }
+      }
+     }
+  }
+ 
+* GitLab CI/CD - Deploy Lambda Function
+      stages: 
+        - build
+        - deploy
+ 
+      build:
+       stage: build
+       script:
+         -zip -r lambda.zip lambda/
+     
+       deploy:
+        stage: deploy
+         script:
+         -aws lambda update-function-code --function-name pathnex-lambda --zip-file fileb://lambda.zip
+   
+ * Docker
+
+ 
+# Multi-Stage Docker Build
+# Stage 1 - Build stage
+      FROM maven:3.9-eclipse-temurin-17 AS builder
+      WRODKDIR /opt/pathnex/java-build
+      COPY . /opt/pathnex/java-build/
+      RUN mvn clean package
+ 
+# STage 2 - Procuction Stage
+      FROM tomcat:9
+      WORKDIR /usr/local/tomcat/webapps
+      COPY --from=builder /opt/pathnex/jabal-build/target/*.war /usr/local/tomcat/webapps/
+      EXPOSE 8080
+      CMD ["Catalina.sh", "run"]
+
+# Real Paths
+    
+ /opt/pathnex/java-build
+ /usr/local/tomcat/webapps 
+ 
+
+  
+
