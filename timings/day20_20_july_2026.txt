@@ -1,0 +1,34 @@
+Today in the morning session we have learan abou terra form
+
+Terraform is a open-source IoC Infrastructure as Code platform. It allows user to define provision data center infrastructure using high level language know as Hasi Corp 
+Configuration Language (HCL). I allows user to automatic infrastructure management like servers, storage networks infrastructure and more.
+
+Important Concepts : 
+
+
+Providers : Terraform communicate with cloud server providers smoothly like AWS, Azure, Google.
+
+Resources : Define the components of infrasture like Virtual machine, Storge, network and others.
+
+Modules : Reusable set of terramform files.
+
+State : Terraform tracks infastrure and determins what changes are needed.
+
+righting terraform Example :
+
+hcl
+provider "aws" {
+ region =" desire regin get form porviders"
+}
+
+resource "aws_instance" " instance name" {
+  ami          ="get form providers image"
+  instance_type = "instance_type"
+
+}
+
+tommorw we will learn practice on terra form means hands-on
+
+
+
+ 
