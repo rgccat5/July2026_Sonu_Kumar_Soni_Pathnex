@@ -1,0 +1,52 @@
+Today we did hands-on of terraform 
+
+we have learn about terrafomr project structre how it works and how we have to see the every file and understand meening of codes.
+
+
+1: .terraform : this folder automaticly created when we run command terraform init and it contents provider plugins, backend configuratino, mudule downloads and internal terrafom metada
+
+2: .terraform.lock.hcl : It stores the exact provider version. Every developers uses the same prvider version, prevents unexpected upgrades. Example : 
+
+            provider "registry.terraform.io/hasicrop/aws" { 
+                version = "5.92.0" 
+             }
+3: backend.tf : It sores terraform define state, possible backends: Local, AWS S3, Azure Storage, GCS, Terrafom Cloud
+        example : 
+                 terraform {
+                 backend "s3" {
+                 bucker = "pathnex-devops-terraform"
+                 key    = "ansible/terraform.tfstate"
+                 regin  = "ap-south-1"
+                 encrypt = true
+                 }
+                }
+4: Providers.tf : It specifies which cloud provider terrafrom wil use like AWS, Azure, Google Cloud
+                  Example :
+                    provider "aws" {
+                    tegion = var.region 
+                    }
+5: variable.tf : Declares all input variables
+ 
+              Example:
+                  variable 'region" {
+                   type = string
+                  }
+                  variable "instance_type" {
+                   type = string
+}
+                  varuabke "key_name" {
+                   type = string
+                  }
+6: terraform.tfvars : Stroe the actual values for the variables.
+
+7 : data.tf : it contents data sources.
+8: locals.tf : Store reusable values.
+9: main.tf : This is the main folder most resources defined here.
+10 output.tf : Display usefull infrmaion after deployment
+
+
+
+these are we understand and also did the hands-on using these structre
+
+tommorw we will learn about ansible.
+            
