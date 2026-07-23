@@ -1,0 +1,44 @@
+Today we have learn about CI / CD 
+CI(Continuous Integration) : Automatically integrating code in to shared repository multiple times a day. It helps to detect the issue continually by testing the software:
+CD(Continuous Delivery / Continuous Deployment) :  
+            Continuous Delivery : Automatically deploying code to production- like environments after passing all the tests.
+            Continuous Deployment : It is extended the continuous delivery to automatic continuous deployment to production after all passes.
+
+GitLab(CI/CD) : Its allows users/team to build, test and deployment automatically by using pipeline.
+ Key components of GitLab CI/CD : pipeline, job, stages, runner
+        pipeline:  A sequence of stages executed in order. It defines the proper order building, testing, and deployment the code
+
+      jobs : Task which we want to run will be the part of pipeline, compiling code, running tests and more.
+      
+      Stages : It allowed to group jobs in pipeline.
+  
+      Runners: Agent that run the jobs. Gitlab can use shared runners or custom runners.
+
+
+
+Jenkins CI/CD : Jenkin is opensource automation server used to continuous integration, continues delivery. It supports to integrate many versions and platforms like GitHub, bitbucket. It allows automate testing and deployment.
+
+key components of Jinkins :
+    pipeline : it contents the series of steps that it will execute and it also provides jenkin UI for the jenkins file.
+
+    Jenkinfiles : The file defines the whole script of pipeline
+     
+     job : it is used for task for the pipeline which will execute. 
+
+     Node and Executers : it runs on specific machine.
+     Freestyle Projects : it provides simple configuration for jobs but less flexible for pipelines.
+
+
+CI / CD Piple line execution : 
+  1 Trigers: jenkings pipeline can be triggers by conditions like when user git commits or scheduled times or manual triggers.
+
+   Stages : Each stages runs sequential unless parallel execution defined.
+ 
+  post action : post-execution can be defined here.
+
+
+
+
+
+
+    
