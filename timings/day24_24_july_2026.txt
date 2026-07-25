@@ -1,0 +1,16 @@
+Today in the morning session we have leared about monitoring by understanding Logs, Metrics, and Traces
+
+also learn about Golden Signals—Latency, Traffic, Errors, and Saturation. 
+
+
+we learn aobut two important monitering tools:
+
+Prometheus monitoring : Prometheus is an open-source, metrics-based monitoring and alerting toolkit originally built by SoundCloud. It is designed specifically for dynamic, cloud-native environments like Docker, Kubernetes, and cloud servers (like your AWS EC2 instances).Unlike traditional monitoring systems that wait for a server to send data, Prometheus actively reaches out to systems to pull data in
+
+ 
+
+Grafana dashboard : It is also Open-Source Tool it transforms raw metric numbers collected by Prometheus into visual, real-time graphs, dials, and alerts.
+
+we did today hands-on prctice about DynoDB, State Lockin, force-unlock as well.
+
+
