@@ -1,0 +1,30 @@
+Today in the morning class, we learned about Kafka.
+
+Apache Kafka is a distributed streaming platform designed to handle high-throughput, fault-tolerant, and real-time data feeds. It is used for building real-time data pipelines and streaming applications. It functions as a messaging system.
+
+Kafka has several important components: Producers, Consumers, Brokers, Topics, Partitions, and ZooKeeper (or KRaft).
+
+Producer: The producer is responsible for sending records or messages to Kafka topics. Producers send data to Kafka topics, which are split into partitions.
+
+Consumer: The consumer reads data from Kafka topics. Consumers can be part of a consumer group, which allows them to process messages in parallel and provides fault tolerance. Each consumer in the group processes messages from partitions. Kafka ensures that each message in a partition is consumed by only one consumer within that group.
+
+Broker: Brokers are servers that store data and serve client requests. A Kafka cluster is made up of one or more brokers. Brokers manage topic partitions, handle data replication, and serve both producers and consumers.
+
+Topic: A topic is a category or stream to which records are published. Each topic is divided into partitions, allowing Kafka to handle large amounts of data and scale horizontally.
+
+ZooKeeper / KRaft: ZooKeeper is a distributed coordination service used by Kafka to manage cluster metadata and leader election for partitions (modern versions also use KRaft for this).
+
+Kafka Connect: Kafka Connect is a framework for integrating Kafka with external systems like databases and key-value stores. It connects to source systems to read data and write it into Kafka topics, or reads from Kafka topics to write data to external destination systems.
+
+Kafka Streams: Kafka Streams is a client library for building real-time streaming applications. It allows for real-time data processing and transformation directly within Kafka topics using simple developer APIs.
+
+Key Guarantees and Features
+Durability: Kafka saves data to disk and replicates it across multiple brokers, ensuring messages are not lost.
+
+Scalability: Kafka scales horizontally, allowing you to seamlessly add more brokers.
+
+High Throughput: Kafka can handle millions of messages per second.
+
+Fault Tolerance: Kafka replicates data across brokers so the system keeps running even if a broker fails.
+
+Message Ordering: Kafka guarantees message ordering within a single partition, but not across multiple partitions.
