@@ -1,0 +1,10 @@
+Today in the morning session we have learn about SSL/TLS Certificates
+
+SSL Certificate (Secure Scoket Layer) certificate encrypts data between webserver and browser, it insurese the secure communication. Digi is the trusted certificat authority(CA).
+
+I also practiced hot to get certfy our domain using open ssl. 
+
+
+
+
+
