@@ -1,0 +1,7 @@
+Today in the mornig session we have learn about SRE Site (Site Reliablity Engineering) : SRE is a disiplne that combines software enginnering with IT operations to build relateble, scalabe, and highly available systems. SRE Team defines Service Level Indicators( SLIs) to mesaure system performance, Servic Level Objectiove(SLOs,) as internal reliablity targets, and Service Level Agriments (SLAs) as coustomer-facing commitments. When incidents occur, engineers follw predefied runbooks to restore services quickly. They also practice chaos engineering by intentionally injection failures to validate system resilence. After every major incident, a blameless prostortem is conducted to anylyze the root cause, custome impact, and preventive actions. key reliablity metrics such as Availablity, MTTD( Meand Time To Detect, MTTR (Mean Time to Recovery), and MTBF(Mean Time Between Failures) help teams continuously imporve the reliablity and operational excellence of their services.
+
+We have also learn Hard  Freeze and Cold Freeze :
+
+Hard Freeze: Hard Freeze is aperiod when all pland prodcution changes are stopped, and olly approved emergency change are allowed to maintain system stablity.
+
+Cold Freeze: Cold Frezze is a stricter freeze where the production enviornment is kept completly stable, with virtually no changes permitted except those required to recover form a critical incident. It is typically used during highly senstive business periods such as financial closing or major sales events.
