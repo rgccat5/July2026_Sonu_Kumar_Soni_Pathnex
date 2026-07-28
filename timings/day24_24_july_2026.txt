@@ -1,16 +1,30 @@
-Today in the morning session we have leared about monitoring by understanding Logs, Metrics, and Traces
+Today in the morning session we have learned about monitoring by understanding 
+
+Logs: Text-based event records, Shows what happened, Used for debugging
+
+Metrics: Numerical performance data, Shows system health, Used for monitoring
+
+Traces : End-to-end request flow, Shows where latency occurs, Used for root cause analysis
 
 also learn about Golden Signals—Latency, Traffic, Errors, and Saturation. 
 
+Latency :	How fast is the application responding
+Traffic :	How much work is the application handling
+Errors	:       How many requests are failing
+Saturation : 	Are system resources running out
 
-we learn aobut two important monitering tools:
 
-Prometheus monitoring : Prometheus is an open-source, metrics-based monitoring and alerting toolkit originally built by SoundCloud. It is designed specifically for dynamic, cloud-native environments like Docker, Kubernetes, and cloud servers (like your AWS EC2 instances).Unlike traditional monitoring systems that wait for a server to send data, Prometheus actively reaches out to systems to pull data in
+
+we learn about two important monitoring tools:
+
+Prometheus monitoring : Prometheus is an open-source, metrics-based monitoring and alerting toolkit. It is designed specifically for dynamic, cloud-native environments like Docker, Kubernetes, and cloud servers. Unlike traditional monitoring systems that wait for a server to send data, Prometheus actively reaches out to systems to pull data form server.
 
  
 
 Grafana dashboard : It is also Open-Source Tool it transforms raw metric numbers collected by Prometheus into visual, real-time graphs, dials, and alerts.
 
-we did today hands-on prctice about DynoDB, State Lockin, force-unlock as well.
+we did today hands-on practice about Dyno DB, State Lockin, force-unlock as well.
 
+
+node_exporter
 

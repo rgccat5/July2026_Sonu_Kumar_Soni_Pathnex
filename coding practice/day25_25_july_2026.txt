@@ -1,0 +1,110 @@
+# Day 25 - Continuous Monitering and alerts
+
+## * Ansible - Setup Prometheus Node Exporter for Monitoring
+
+      ~~~yaml
+        - name: Setup Prometheus Node Exporter
+          hosts: all
+          become: yes
+          tasks:
+            - name:
+          
+              yum:
+              name: prometheus-node-exporter
+              state: present
+            - name: Start Prometheus Node Exporter service
+              service:
+               name: prometheus-node-exporter
+               state: started
+               enabled: yes
+    * Terraform - Create CloudWatch Alarms
+      resource "aws_cloudwatch_metric_alarm" "pahtnex_cpu_alarm" {
+        alarm_name        = "pathnex-cpu-utilization-high"
+        comarison_operator = "GreaterThanThreshould"
+        evaluation_periods = "1"
+        matric_name        = "CPUUtilization"
+        namespace          = "AW/EC2"
+        period             = "80"
+       
+        dimensions = {
+           InstancedID =aws_instance.pathnex_ex2.id
+            }
+         alarm_actions = [aws_sns_topic.pahtnex_alerts.arn]
+            }
+        resource "aws_sns_topic" "ptahnex_alerts" {
+            name = "pathnex-alerts"
+           }
+      * Kubernets - Set Up Prometheus and Grafna
+        apiVerison: app/v1
+        kind: Deployment
+        metadata:
+          name: prometheus
+        spec:
+          replicas: 1
+           selector:
+            mathlLabels:
+              app: prometheus
+        spec:
+           comtainers:
+           - name: prometheus
+ 
+        spec:
+            containers:
+           - name: prmetheus
+             image: prom/prmetheus:latest
+             ports:
+               - containerPort: 9090
+       ---
+      apiVersion: apps/v1
+      kind: Deployment
+      mentada:
+         name: grafana
+      spec:
+       replicas: 1
+       selector:
+         matchlables:
+          app: graphana
+         template:
+           metadata:
+             lables:
+             app: grafana
+         spec:
+             containers:
+              - name : grafana
+                image: grafana/grafana:latest
+                ports:
+                     - containerPort: 3000
+  * Jenkinsfile - Cintinuous Monitering and Alerts in CI pipeline
+     pipeline {
+           agent any
+           stages {
+              stage('Monitor') {
+              steps {
+                 script {
+                  echo ' Triggering CludWatch_alarms if CPU excedds 80%'
+                 sh 'aws cloudwatch put-metric-data --namespace "AWS/EC2" --metric-name " CPUUtilization" --value 90'
+                }
+            }
+         }
+       stage('Test') {
+          step {
+            echo 'Running test...'
+           }
+         }
+       }
+      }
+ 
+    * GitLab CI/CD - Monitoring and Alerting in CI/CD pipeline
+       stage:
+        - monitor
+        - test
+      monitor: 
+        stage: monitor
+        script:
+        - echo "Running test..."
+ 
+ * Docker
+# .dockerigonore file
+     node_modules
+     .git
+       temp
